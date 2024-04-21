@@ -280,7 +280,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "MEDIA_OR_CONFIG_LAYER";
             #binding-cells = <0>;
-            bindings = <&mo 4>, <&mo 6>;
+            bindings = <&mo 0>, <&mo 4>;
         };
 
         mac_like_backspace: mac_like_backspace {
@@ -305,7 +305,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "NUMPAD_SWITCH";
             #binding-cells = <0>;
-            bindings = <&kp KP_NUMLOCK>, <&none>, <&stickier_layer 6>;
+            bindings = <&kp KP_NUMLOCK>, <&none>, <&stickier_layer 4>;
         };
 
         osl_or_hold_layer: osl_or_hold_layer {
@@ -322,16 +322,16 @@
         compatible = "zmk,combos";
 
         single_hand_unlock {
-            bindings = <&tog 7>;
+            bindings = <&tog 5>;
             key-positions = <54 28 26>;
-            layers = <7>;
+            layers = <5>;
             require-prior-idle-ms = <5000>;
             slow-release;
             timeout-ms = <1000>;
         };
 
         two_thumb_adjust_layer_act {
-            bindings = <&mo 4>;
+            bindings = <&mo 0>;
             key-positions = <54 55>;
         };
 
@@ -483,11 +483,11 @@
 
         iso_base {
             bindings = <
-&kp ESCAPE                           &auto_shift_num_row LS(NUMBER_1) NUMBER_1  &auto_shift_num_row LS(NUMBER_2) NUMBER_2  &auto_shift_num_row LS(NUMBER_3) NUMBER_3  &auto_shift_num_row LS(NUMBER_4) NUMBER_4  &auto_shift_num_row LS(N5) NUMBER_5                                        &auto_shift_num_row LS(NUMBER_6) NUMBER_6  &auto_shift_num_row LS(NUMBER_7) NUMBER_7  &auto_shift_num_row LS(NUMBER_8) NUMBER_8  &auto_shift_num_row LS(NUMBER_9) NUMBER_9  &auto_shift_num_row LS(NUMBER_0) NUMBER_0    &auto_shift_num_row LS(MINUS) MINUS
-&auto_shift_num_row LS(GRAVE) GRAVE  &kp Q                                      &kp W                                      &kp E                                      &kp R                                      &kp T                                                                      &kp Y                                      &kp U                                      &kp I                                      &kp O                                      &kp P                                        &media_or_config_layer
-&tap_dance_l_shift_capwords          &kp A                                      &kp S                                      &kp D                                      &kp F                                      &kp G                                                                      &kp H                                      &kp J                                      &kp K                                      &kp L                                      &auto_shift_num_row LS(SEMICOLON) SEMICOLON  &auto_shift_num_row LS(SQT) SQT
-&tap_dance_sticky_l_ctrl             &kp Z                                      &kp X                                      &kp C                                      &kp V                                      &kp B                                &kp C_MUTE         &kp C_PLAY_PAUSE   &kp N                                      &kp M                                      &auto_shift_num_row LS(COMMA) COMMA        &auto_shift_num_row LS(DOT) DOT            &auto_shift_num_row LS(SLASH) SLASH          &kp LEFT_GUI
-                                                                                &tog 5                                     &mo 6                                      &tap_dance_sticky_l_alt                    &mac_like_backspace                  &thumb_th 2 TAB    &thumb_th 3 ENTER  &kp SPACE                                  &mo 4                                      &trans                                     &trans
+&kp GRAVE       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp NUMBER_5                                  &kp NUMBER_6  &kp NUMBER_7       &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0   &none
+&kp ESCAPE      &kp Q         &kp W         &kp E         &kp R             &kp T                                         &kp Y         &kp U              &kp I          &kp O         &kp P          &kp BACKSPACE
+&kp TAB         &kp A         &kp S         &kp D         &kp F             &kp G                                         &kp H         &kp J              &kp K          &kp L         &kp SEMICOLON  &kp SQT
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C         &kp V             &kp B         &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M              &kp COMMA      &kp PERIOD    &kp SLASH      &kp RIGHT_SHIFT
+                              &kp LCTRL     &kp LEFT_ALT  &kp LEFT_COMMAND  &mo 2         &kp ENTER     &kp SPACE         &mo 3         &kp RIGHT_COMMAND  &kp RIGHT_ALT  &kp RCTRL
             >;
 
             display-name = "BASE";
@@ -498,11 +498,11 @@
 
         mac {
             bindings = <
-&trans  &trans  &trans  &trans  &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &tap_dance_sticky_l_alt
-                &trans  &trans  &kp LEFT_GUI  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans            &trans        &trans                    &trans  &trans         &trans             &trans  &trans  &trans
+&trans  &trans  &trans  &trans            &trans        &trans                    &trans  &trans         &trans             &trans  &trans  &trans
+&trans  &trans  &trans  &trans            &trans        &trans                    &trans  &trans         &trans             &trans  &trans  &trans
+&trans  &trans  &trans  &trans            &trans        &trans  &trans    &trans  &trans  &trans         &trans             &trans  &trans  &tap_dance_sticky_l_alt
+                &trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &trans  &trans    &trans  &trans  &kp RIGHT_ALT  &kp RIGHT_COMMAND  &trans
             >;
 
             display-name = "MAC";
@@ -513,7 +513,7 @@
 &trans  &trans                                     &trans                                     &trans                                     &trans                                     &trans                                                       &trans            &trans             &trans         &trans     &trans  &trans
 &trans  &auto_shift_num_row LS(NUMBER_6) NUMBER_6  &auto_shift_num_row LS(NUMBER_7) NUMBER_7  &auto_shift_num_row LS(NUMBER_8) NUMBER_8  &auto_shift_num_row LS(NUMBER_9) NUMBER_9  &auto_shift_num_row LS(NUMBER_0) NUMBER_0                    &trans            &trans             &trans         &trans     &trans  &kp MINUS
 &trans  &auto_shift_num_row LS(NUMBER_1) NUMBER_1  &auto_shift_num_row LS(NUMBER_2) NUMBER_2  &auto_shift_num_row LS(NUMBER_3) NUMBER_3  &auto_shift_num_row LS(NUMBER_4) NUMBER_4  &auto_shift_num_row LS(NUMBER_5) NUMBER_5                    &trans            &trans             &trans         &trans     &trans  &kp UNDERSCORE
-&trans  &osl_or_hold_layer 6 6                     &kp TILDE                                  &kp GRAVE                                  &kp LEFT_BRACE                             &kp RIGHT_BRACE                            &trans    &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SEMICOLON  &kp COLON  &trans  &trans
+&trans  &osl_or_hold_layer 4 4                     &kp TILDE                                  &kp GRAVE                                  &kp LEFT_BRACE                             &kp RIGHT_BRACE                            &trans    &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SEMICOLON  &kp COLON  &trans  &trans
                                                    &trans                                     &trans                                     &trans                                     &kp ESCAPE                                 &trans    &trans  &trans            &trans             &trans         &trans
             >;
 
@@ -532,37 +532,13 @@
             display-name = "RAISE";
         };
 
-        adjust {
-            bindings = <
-&trans        &trans  &trans  &trans  &trans  &trans                     &trans            &trans             &trans           &trans  &trans  &trans
-&kp CAPSLOCK  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10                    &kp F11           &kp F12            &trans           &trans  &trans  &trans
-&trans        &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                     &kp C_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans  &trans
-&trans        &trans  &trans  &trans  &trans  &trans   &trans    &trans  &kp C_PLAY_PAUSE  &kp C_PREVIOUS     &kp C_NEXT       &trans  &trans  &trans
-                      &trans  &trans  &trans  &trans   &trans    &trans  &trans            &trans             &trans           &trans
-            >;
-
-            display-name = "ADJUST";
-        };
-
-        numpad {
-            bindings = <
-&numpad_switch  &numpad_switch   &kp BACKSPACE    &kp KP_DIVIDE    &kp KP_MULTIPLY  &kp KP_MINUS                             &none            &none           &none            &none  &none        &none
-&numpad_switch  &kp BACKSPACE    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS                              &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &none  &kp INSERT   &kp DELETE
-&kp KP_MINUS    &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp EQUAL                                &none            &kp UP_ARROW    &none            &none  &kp HOME     &kp END
-&kp KP_DIVIDE   &kp KP_MULTIPLY  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_0  &trans          &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &kp PAGE_UP  &kp PAGE_DOWN
-                                 &trans           &trans           &kp KP_DOT       &kp KP_NUMBER_0  &kp KP_ENTER    &none   &none            &none           &none            &none
-            >;
-
-            display-name = "NUMPAD";
-        };
-
         config {
             bindings = <
 &trans  &trans              &trans              &trans              &trans              &trans                                &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &bt_0_sel_or_unsel  &bt_1_sel_or_unsel  &bt_2_sel_or_unsel  &bt_3_sel_or_unsel  &bt_4_sel_or_unsel                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &ext_power EP_TOG   &trans              &trans              &bt BT_CLR          &out_tg_or_usb                        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &tog 1              &trans              &trans              &trans              &tog 5              &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                            &trans              &trans              &tog 7              &trans              &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &tog 1              &trans              &trans              &trans              &tog 0              &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans              &trans              &tog 5              &trans              &trans    &trans  &trans  &trans  &trans  &trans
             >;
 
             display-name = "CONFIG";
