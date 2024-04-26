@@ -329,6 +329,16 @@
             slow-release;
             timeout-ms = <1000>;
         };
+
+        LOWER {
+            bindings = <&tog 2>;
+            key-positions = <53 41>;
+        };
+
+        RAISE {
+            bindings = <&tog 3>;
+            key-positions = <56 44>;
+        };
     };
 
     macros {
