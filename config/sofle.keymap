@@ -342,7 +342,7 @@
         };
 
         Soft_Off {
-            bindings = <&soft_off>;
+            bindings = <&ext_power EP_TOG>;
             key-positions = <11 23>;
         };
     };
