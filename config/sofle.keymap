@@ -339,6 +339,11 @@
             bindings = <&tog 3>;
             key-positions = <56 44>;
         };
+
+        Soft_Off {
+            bindings = <&soft_off>;
+            key-positions = <11 23>;
+        };
     };
 
     macros {
@@ -410,11 +415,11 @@
 
         base {
             bindings = <
-&kp GRAVE       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp NUMBER_5                                  &kp NUMBER_6  &kp NUMBER_7       &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0   &mo 4
-&kp ESCAPE      &kp Q         &kp W         &kp E         &kp R             &kp T                                         &kp Y         &kp U              &kp I          &kp O         &kp P          &kp BACKSPACE
-&kp TAB         &kp A         &kp S         &kp D         &kp F             &kp G                                         &kp H         &kp J              &kp K          &kp L         &kp SEMICOLON  &kp SQT
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C         &kp V             &kp B         &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M              &kp COMMA      &kp PERIOD    &kp SLASH      &kp RIGHT_SHIFT
-                              &kp LCTRL     &kp LEFT_ALT  &kp LEFT_COMMAND  &mo 2         &kp ENTER     &kp SPACE         &mo 3         &kp RIGHT_COMMAND  &kp RIGHT_ALT  &kp RCTRL
+&kp AT_SIGN                  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp NUMBER_5                                  &kp NUMBER_6  &kp NUMBER_7       &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0   &mo 4
+&kp ESCAPE                   &kp Q         &kp W         &kp E         &kp R             &kp T                                         &kp Y         &kp U              &kp I          &kp O         &kp P          &kp BACKSPACE
+&kp TAB                      &kp A         &kp S         &kp D         &kp F             &kp G                                         &kp H         &kp J              &kp K          &kp L         &kp SEMICOLON  &kp SQT
+&tap_dance_l_shift_capwords  &kp Z         &kp X         &kp C         &kp V             &kp B         &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M              &kp COMMA      &kp PERIOD    &kp SLASH      &kp RIGHT_SHIFT
+                                           &kp LCTRL     &kp LEFT_ALT  &kp LEFT_COMMAND  &mo 2         &kp ENTER     &kp SPACE         &mo 3         &kp RIGHT_COMMAND  &kp RIGHT_ALT  &kp RCTRL
             >;
 
             display-name = "BASE";
@@ -449,11 +454,11 @@
 
         raise {
             bindings = <
-&trans      &trans        &trans           &trans             &trans     &trans                          &trans         &trans          &trans    &trans           &trans             &trans
-&kp ESCAPE  &kp INS       &kp PRINTSCREEN  &kp K_APPLICATION  &none      &none                           &kp PAGE_UP    &kp LC(LEFT)    &kp UP    &kp LC(RIGHT)    &kp LC(BACKSPACE)  &kp BACKSPACE
-&trans      &kp LEFT_ALT  &kp LCTRL        &kp LEFT_SHIFT     &none      &kp CAPSLOCK                    &kp PAGE_DOWN  &kp DOWN_ARROW  &kp DOWN  &kp RIGHT_ARROW  &kp K_APPLICATION  &kp BACKSPACE
-&trans      &kp LG(Z)     &kp LG(X)        &kp LG(C)          &kp LG(V)  &none         &trans    &trans  &none          &kp LC(HOME)    &none     &kp LC(END)      &trans             &trans
-                          &trans           &trans             &trans     &trans        &trans    &trans  &trans         &trans          &trans    &trans
+&trans      &trans     &trans           &trans             &trans     &trans                          &trans         &trans          &trans    &trans           &trans             &trans
+&kp ESCAPE  &kp INS    &kp PRINTSCREEN  &kp K_APPLICATION  &none      &none                           &kp PAGE_UP    &kp LC(LEFT)    &kp UP    &kp LC(RIGHT)    &kp LC(BACKSPACE)  &kp BACKSPACE
+&trans      &kp LG(A)  &kp LCTRL        &kp LEFT_SHIFT     &none      &kp CAPSLOCK                    &kp PAGE_DOWN  &kp DOWN_ARROW  &kp DOWN  &kp RIGHT_ARROW  &kp K_APPLICATION  &kp BACKSPACE
+&trans      &kp LG(Z)  &kp LG(X)        &kp LG(C)          &kp LG(V)  &none         &trans    &trans  &none          &kp LC(HOME)    &none     &kp LC(END)      &trans             &trans
+                       &trans           &trans             &trans     &trans        &trans    &trans  &trans         &trans          &trans    &trans
             >;
 
             display-name = "RAISE";
@@ -461,7 +466,7 @@
 
         config {
             bindings = <
-&trans  &trans              &trans              &trans              &trans              &trans                                &trans  &trans  &trans  &trans  &trans  &trans
+&tog 0  &tog 1              &tog 2              &tog 3              &tog 4              &tog 5                                &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &bt_0_sel_or_unsel  &bt_1_sel_or_unsel  &bt_2_sel_or_unsel  &bt_3_sel_or_unsel  &bt_4_sel_or_unsel                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &ext_power EP_TOG   &trans              &trans              &bt BT_CLR          &out_tg_or_usb                        &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &tog 1              &trans              &trans              &trans              &tog 0              &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
