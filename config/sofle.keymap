@@ -468,7 +468,7 @@
 
         config {
             bindings = <
-&tog 0  &tog 1              &tog 2              &tog 3              &tog 4              &tog 5                                &trans  &trans  &trans  &trans  &trans  &trans
+&to 0   &to 1               &to 2               &to 3               &to 4               &tog 5                                &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &bt_0_sel_or_unsel  &bt_1_sel_or_unsel  &bt_2_sel_or_unsel  &bt_3_sel_or_unsel  &bt_4_sel_or_unsel                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &ext_power EP_TOG   &trans              &trans              &bt BT_CLR          &trans                                &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans              &trans              &trans              &trans              &trans              &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
