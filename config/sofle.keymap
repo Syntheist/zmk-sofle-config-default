@@ -438,23 +438,26 @@
 
         lower {
             bindings = <
-&none      &kp F1        &kp F2        &kp F3    &kp F4          &kp F5                                   &kp F6            &kp F7             &kp F8         &kp F9                &kp F10                &kp F11
-&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp N3    &kp N4          &kp N5                                   &kp N6            &kp N7             &kp N8         &kp N9                &kp N0                 &kp F12
-&kp TAB    &kp EXCL      &kp AT        &kp HASH  &kp DOLLAR      &kp PERCENT                              &kp CARET         &kp AMPS           &kp ASTRK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
-&kp LSHFT  &kp EQUAL     &kp MINUS     &kp PLUS  &kp LEFT_BRACE  &kp RIGHT_BRACE  &mkp LCLK    &mkp RCLK  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SEMICOLON  &kp COLON             &kp BSLH               &kp RIGHT_SHIFT
-                         &trans        &trans    &trans          &trans           &trans       &trans     &trans            &trans             &trans         &trans
+&none      &kp F1        &kp F2        &kp F3    &kp F4          &kp F5                                                             &kp F6            &kp F7             &kp F8         &kp F9                &kp F10                &trans
+&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp N3    &kp N4          &kp N5                                                             &kp N6            &kp N7             &kp N8         &kp N9                &kp N0                 &kp F11
+&kp TAB    &kp EXCL      &kp AT        &kp HASH  &kp DOLLAR      &kp PERCENT                                                        &kp CARET         &kp AMPS           &kp ASTRK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp F12
+&kp LSHFT  &kp EQUAL     &kp MINUS     &kp PLUS  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp C_BRIGHTNESS_MAXIMUM    &kp C_AC_VIEW_TOGGLE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SEMICOLON  &kp COLON             &kp BSLH               &kp RIGHT_SHIFT
+                         &trans        &trans    &trans          &trans           &trans                      &trans                &trans            &trans             &trans         &trans
             >;
 
             display-name = "LOWER";
+            sensor-bindings =
+                <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>,
+                <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
         };
 
         raise {
             bindings = <
-&trans      &trans     &trans           &trans             &trans     &trans                    &trans         &trans          &trans    &trans           &trans             &trans
-&kp ESCAPE  &kp INS    &kp PRINTSCREEN  &kp K_APPLICATION  &none      &none                     &kp PAGE_UP    &kp LC(LEFT)    &kp UP    &kp LC(RIGHT)    &kp LC(BACKSPACE)  &kp BACKSPACE
-&trans      &kp LG(A)  &kp LCTRL        &kp LEFT_SHIFT     &none      &trans                    &kp PAGE_DOWN  &kp DOWN_ARROW  &kp DOWN  &kp RIGHT_ARROW  &kp K_APPLICATION  &kp BACKSPACE
-&kp CAPS    &kp LG(Z)  &kp LG(X)        &kp LG(C)          &kp LG(V)  &none   &trans    &trans  &none          &kp LC(HOME)    &none     &kp LC(END)      &trans             &kp CAPS
-                       &trans           &trans             &trans     &trans  &trans    &trans  &trans         &trans          &trans    &trans
+&trans      &trans     &trans           &trans             &trans     &trans                          &trans         &trans          &trans    &trans           &trans             &trans
+&kp ESCAPE  &kp INS    &kp PRINTSCREEN  &kp K_APPLICATION  &none      &none                           &kp PAGE_UP    &kp LC(LEFT)    &kp UP    &kp LC(RIGHT)    &kp LC(BACKSPACE)  &kp BACKSPACE
+&trans      &kp LG(A)  &kp LCTRL        &kp LEFT_SHIFT     &none      &trans                          &kp PAGE_DOWN  &kp DOWN_ARROW  &kp DOWN  &kp RIGHT_ARROW  &kp K_APPLICATION  &kp BACKSPACE
+&kp CAPS    &kp LG(Z)  &kp LG(X)        &kp LG(C)          &kp LG(V)  &none   &mkp LCLK    &mkp RCLK  &none          &kp LC(HOME)    &none     &kp LC(END)      &trans             &kp CAPS
+                       &trans           &trans             &trans     &trans  &trans       &trans     &trans         &trans          &trans    &trans
             >;
 
             display-name = "RAISE";
