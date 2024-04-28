@@ -340,11 +340,6 @@
             bindings = <&tog 3>;
             key-positions = <56 44>;
         };
-
-        Soft_Off {
-            bindings = <&ext_power EP_TOG>;
-            key-positions = <11 23>;
-        };
     };
 
     macros {
@@ -490,7 +485,6 @@
             >;
 
             display-name = "LOCKED";
-            sensor-bindings = <&inc_dec_kp 0 0>, <&inc_dec_kp 0 0>;
         };
     };
 
