@@ -341,7 +341,7 @@
             key-positions = <56 44>;
         };
 
-        P+Backspace_Delete {
+        P_Backspace_Delete {
             bindings = <&kp DELETE>;
             key-positions = <23 22>;
         };
