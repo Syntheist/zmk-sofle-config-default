@@ -435,7 +435,7 @@
 &trans  &trans  &trans  &trans            &trans        &trans                    &trans  &trans         &trans             &trans  &trans  &trans
 &trans  &trans  &trans  &trans            &trans        &trans                    &trans  &trans         &trans             &trans  &trans  &trans
 &trans  &trans  &trans  &trans            &trans        &trans  &trans    &trans  &trans  &trans         &trans             &trans  &trans  &tap_dance_sticky_l_alt
-                &trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &trans  &trans    &trans  &trans  &kp RIGHT_ALT  &kp RIGHT_COMMAND  &trans
+                &trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &trans  &trans    &trans  &mo 6   &kp RIGHT_ALT  &kp RIGHT_COMMAND  &trans
             >;
 
             display-name = "ALT";
@@ -494,7 +494,29 @@
 
             display-name = "LOCKED";
         };
+
+        Win_Raise {
+            display-name = "WIN_RAISE";
+            bindings = <
+&trans      &trans     &trans           &trans             &trans     &trans                          &trans         &trans          &trans    &trans           &trans             &trans
+&kp ESCAPE  &kp INS    &kp PRINTSCREEN  &kp K_APPLICATION  &none      &none                           &kp PAGE_UP    &kp LC(LEFT)    &kp UP    &kp LC(RIGHT)    &kp LC(BACKSPACE)  &kp DELETE
+&trans      &kp LC(A)  &kp LCTRL        &kp LEFT_SHIFT     &none      &trans                          &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN  &kp RIGHT_ARROW  &kp K_APPLICATION  &kp BACKSPACE
+&kp CAPS    &kp LC(Z)  &kp LC(X)        &kp LC(C)          &kp LC(V)  &none   &mkp LCLK    &mkp RCLK  &none          &kp LC(HOME)    &none     &kp LC(END)      &trans             &kp CAPS
+                       &trans           &trans             &trans     &trans  &trans       &trans     &trans         &trans          &trans    &trans
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp UP_ARROW DOWN_ARROW>,
+                <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
+        };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        Win_Raise_Condition {
+            if-layers = <1>;
+            then-layer = <6>;
+        };
+    };
 };
