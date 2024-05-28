@@ -317,6 +317,16 @@
             #binding-cells = <2>;
             tapping-term-ms = <275>;
         };
+
+        tap_dance_r_shift: tap_dance_r_shift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_R_SHIFT";
+            #binding-cells = <0>;
+            bindings =
+                <&kp RIGHT_SHIFT>,
+                <&sticky_mod RIGHT_SHIFT>,
+                <&better_cap_word>;
+        };
     };
 
     combos {
@@ -416,11 +426,11 @@
 
         base {
             bindings = <
-&kp AT_SIGN                  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp NUMBER_5                                  &kp NUMBER_6  &kp NUMBER_7       &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0   &lt 4 MINUS
-&kp ESCAPE                   &kp Q         &kp W         &kp E         &kp R             &kp T                                         &kp Y         &kp U              &kp I          &kp O         &kp P          &kp BACKSPACE
-&kp TAB                      &kp A         &kp S         &kp D         &kp F             &kp G                                         &kp H         &kp J              &kp K          &kp L         &kp SEMICOLON  &kp SQT
-&tap_dance_l_shift_capwords  &kp Z         &kp X         &kp C         &kp V             &kp B         &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M              &kp COMMA      &kp PERIOD    &kp SLASH      &kp RIGHT_SHIFT
-                                           &kp LCTRL     &kp LEFT_ALT  &kp LEFT_COMMAND  &mo 2         &kp ENTER     &kp SPACE         &mo 3         &kp RIGHT_COMMAND  &kp RIGHT_ALT  &kp RCTRL
+&kp AT_SIGN                  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp NUMBER_5                                        &kp NUMBER_6  &kp NUMBER_7       &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0   &lt 4 MINUS
+&kp ESCAPE                   &kp Q         &kp W         &kp E         &kp R             &kp T                                               &kp Y         &kp U              &kp I          &kp O         &kp P          &kp BACKSPACE
+&kp TAB                      &kp A         &kp S         &kp D         &kp F             &kp G                                               &kp H         &kp J              &kp K          &kp L         &kp SEMICOLON  &kp SQT
+&tap_dance_l_shift_capwords  &kp Z         &kp X         &kp C         &kp V             &kp B         &kp C_MUTE          &kp C_PLAY_PAUSE  &kp N         &kp M              &kp COMMA      &kp PERIOD    &kp SLASH      &tap_dance_r_shift
+                                           &kp LCTRL     &kp LEFT_ALT  &kp LEFT_COMMAND  &mo 2         &mt RETURN SPACE    &mt RET SPACE     &mo 3         &kp RIGHT_COMMAND  &kp RIGHT_ALT  &kp RCTRL
             >;
 
             display-name = "BASE";
@@ -435,7 +445,7 @@
 &trans  &trans  &trans  &trans            &trans        &trans                    &trans  &trans         &trans             &trans  &trans  &trans
 &trans  &trans  &trans  &trans            &trans        &trans                    &trans  &trans         &trans             &trans  &trans  &trans
 &trans  &trans  &trans  &trans            &trans        &trans  &trans    &trans  &trans  &trans         &trans             &trans  &trans  &tap_dance_sticky_l_alt
-                &trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &trans  &trans    &trans  &mo 6   &kp RIGHT_ALT  &kp RIGHT_COMMAND  &trans
+                &trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &trans  &trans    &trans  &mo 0   &kp RIGHT_ALT  &kp RIGHT_COMMAND  &trans
             >;
 
             display-name = "ALT";
@@ -443,11 +453,11 @@
 
         lower {
             bindings = <
-&none      &kp F1        &kp F2        &kp F3    &kp F4          &kp F5                                                             &kp F6            &kp F7             &kp F8         &kp F9                &kp F10                &trans
-&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp N3    &kp N4          &kp N5                                                             &kp N6            &kp N7             &kp N8         &kp N9                &kp N0                 &kp F11
-&kp TAB    &kp EXCL      &kp AT        &kp HASH  &kp DOLLAR      &kp PERCENT                                                        &kp CARET         &kp AMPS           &kp ASTRK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp F12
-&kp LSHFT  &kp EQUAL     &kp MINUS     &kp PLUS  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp C_BRIGHTNESS_MAXIMUM    &kp C_AC_VIEW_TOGGLE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SEMICOLON  &kp COLON             &kp BSLH               &kp RIGHT_SHIFT
-                         &trans        &trans    &trans          &trans           &trans                      &trans                &trans            &trans             &trans         &trans
+&kp KP_PLUS      &kp F1        &kp F2        &kp F3            &kp F4          &kp F5                                                                  &kp F6                 &kp F7           &kp F8             &kp F9         &kp F10    &trans
+&kp KP_MINUS     &kp NUMBER_1  &kp NUMBER_2  &kp N3            &kp N4          &kp N5                                                                  &kp N6                 &kp N7           &kp N8             &kp N9         &kp N0     &kp F11
+&kp KP_MULTIPLY  &kp EXCL      &kp AT        &kp HASH          &kp DOLLAR      &kp PERCENT                                                             &kp CARET              &kp AMPS         &kp GRAVE          &kp SEMICOLON  &kp SLASH  &kp F12
+&kp KP_DIVIDE    &kp KP_EQUAL  &kp TILDE     &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp C_BRIGHTNESS_MAXIMUM    &kp C_AC_VIEW_TOGGLE  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp COLON      &kp BSLH   &kp RIGHT_SHIFT
+                               &trans        &trans            &trans          &trans                &trans                      &trans                &trans                 &trans           &trans             &trans
             >;
 
             display-name = "LOWER";
@@ -494,29 +504,7 @@
 
             display-name = "LOCKED";
         };
-
-        Win_Raise {
-            display-name = "WIN_RAISE";
-            bindings = <
-&trans      &trans     &trans           &trans             &trans     &trans                          &trans         &trans          &trans    &trans           &trans             &trans
-&kp ESCAPE  &kp INS    &kp PRINTSCREEN  &kp K_APPLICATION  &none      &none                           &kp PAGE_UP    &kp LC(LEFT)    &kp UP    &kp LC(RIGHT)    &kp LC(BACKSPACE)  &kp DELETE
-&trans      &kp LC(A)  &kp LCTRL        &kp LEFT_SHIFT     &none      &trans                          &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN  &kp RIGHT_ARROW  &kp K_APPLICATION  &kp BACKSPACE
-&kp CAPS    &kp LC(Z)  &kp LC(X)        &kp LC(C)          &kp LC(V)  &none   &mkp LCLK    &mkp RCLK  &none          &kp LC(HOME)    &none     &kp LC(END)      &trans             &kp CAPS
-                       &trans           &trans             &trans     &trans  &trans       &trans     &trans         &trans          &trans    &trans
-            >;
-
-            sensor-bindings =
-                <&inc_dec_kp UP_ARROW DOWN_ARROW>,
-                <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
-        };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        Win_Raise_Condition {
-            if-layers = <1>;
-            then-layer = <6>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
