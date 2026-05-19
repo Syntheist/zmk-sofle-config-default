@@ -21,7 +21,6 @@
     behaviors {
         better_cap_word: better_cap_word {
             compatible = "zmk,behavior-caps-word";
-            label = "BETTER_CAP_WORD";
             #binding-cells = <0>;
             continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z KP_MINUS MINUS BACKSPACE DELETE LEFT_ARROW RIGHT_ARROW UP_ARROW DOWN_ARROW C_VOLUME_UP C_VOLUME_DOWN C_MUTE C_PREVIOUS C_NEXT C_PLAY_PAUSE>;
             mods = <(MOD_LSFT)>;
@@ -29,7 +28,6 @@
 
         sticky_mod: sticky_mod {
             compatible = "zmk,behavior-sticky-key";
-            label = "STICKY_MOD";
             bindings = <&kp>;
             #binding-cells = <1>;
             quick-release;
@@ -38,7 +36,6 @@
 
         stickier_layer: stickier_layer {
             compatible = "zmk,behavior-sticky-key";
-            label = "STICKIER_LAYER";
             bindings = <&mo>;
             #binding-cells = <1>;
             release-after-ms = <3000>;
@@ -47,7 +44,6 @@
 
         out_tg_or_usb: out_tg_or_usb {
             compatible = "zmk,behavior-mod-morph";
-            label = "OUT_TG_OR_USB";
             bindings = <&out OUT_TOG>, <&out OUT_USB>;
 
             #binding-cells = <0>;
@@ -56,7 +52,6 @@
 
         bt_0_sel_or_unsel: bt_0_sel_or_unsel {
             compatible = "zmk,behavior-mod-morph";
-            label = "BT_0_SEL_OR_UNSEL";
             bindings = <&bt BT_SEL 0>, <&shift_clear_bt0>;
 
             #binding-cells = <0>;
@@ -65,7 +60,6 @@
 
         bt_1_sel_or_unsel: bt_1_sel_or_unsel {
             compatible = "zmk,behavior-mod-morph";
-            label = "BT_1_SEL_OR_UNSEL";
             bindings = <&bt BT_SEL 1>, <&shift_clear_bt1>;
 
             #binding-cells = <0>;
@@ -74,7 +68,6 @@
 
         bt_2_sel_or_unsel: bt_2_sel_or_unsel {
             compatible = "zmk,behavior-mod-morph";
-            label = "BT_2_SEL_OR_UNSEL";
             bindings = <&bt BT_SEL 2>, <&shift_clear_bt2>;
 
             #binding-cells = <0>;
@@ -83,7 +76,6 @@
 
         bt_3_sel_or_unsel: bt_3_sel_or_unsel {
             compatible = "zmk,behavior-mod-morph";
-            label = "BT_3_SEL_OR_UNSEL";
             bindings = <&bt BT_SEL 3>, <&shift_clear_bt3>;
 
             #binding-cells = <0>;
@@ -92,7 +84,6 @@
 
         bt_4_sel_or_unsel: bt_4_sel_or_unsel {
             compatible = "zmk,behavior-mod-morph";
-            label = "BT_4_SEL_OR_UNSEL";
             bindings = <&bt BT_SEL 4>, <&shift_clear_bt4>;
 
             #binding-cells = <0>;
@@ -101,7 +92,6 @@
 
         auto_shift_num_row: auto_shift_num_row {
             compatible = "zmk,behavior-hold-tap";
-            label = "AUTO_SHIFT_NUM_ROW";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -113,7 +103,6 @@
 
         home_row_mods_lh: home_row_mods_lh {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_ROW_MODS_LH";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -126,7 +115,6 @@
 
         home_row_mods_rh: home_row_mods_rh {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_ROW_MODS_RH";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -139,7 +127,6 @@
 
         thumb_cluster_lh: thumb_cluster_lh {
             compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_CLUSTER_LH";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -151,7 +138,6 @@
 
         thumb_cluster_rh: thumb_cluster_rh {
             compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_CLUSTER_RH";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -163,7 +149,6 @@
 
         thumb_cluster_nav: thumb_cluster_nav {
             compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_CLUSTER_NAV";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -175,7 +160,6 @@
 
         thumb_cluster_num: thumb_cluster_num {
             compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_CLUSTER_NUM";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -187,7 +171,6 @@
 
         home_row_mods_lh_shift: home_row_mods_lh_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_ROW_MODS_LH_SHIFT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -199,7 +182,6 @@
 
         home_row_mods_rh_shift: home_row_mods_rh_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_ROW_MODS_RH_SHIFT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -211,7 +193,6 @@
 
         tap_dance_l_shift_capwords: tap_dance_l_shift_capwords {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_L_SHIFT_CAPWORDS";
             #binding-cells = <0>;
             bindings =
                 <&kp LEFT_SHIFT>,
@@ -221,35 +202,30 @@
 
         tap_dance_sticky_l_ctrl: tap_dance_sticky_l_ctrl {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_STICKY_L_CTRL";
             #binding-cells = <0>;
             bindings = <&kp LEFT_CONTROL>, <&sticky_mod LEFT_CONTROL>;
         };
 
         tap_dance_sticky_l_alt: tap_dance_sticky_l_alt {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_STICKY_L_ALT";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT>, <&sticky_mod LEFT_ALT>;
         };
 
         layer_num_switch_tap_dance: layer_num_switch_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_NUM_SWITCH_TAP_DANCE";
             #binding-cells = <0>;
             bindings = <&mo 0>, <&stickier_layer 0>, <&tog 0>;
         };
 
         layer_nav_switch_tap_dance: layer_nav_switch_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_NAV_SWITCH_TAP_DANCE";
             #binding-cells = <0>;
             bindings = <&mo 0>, <&stickier_layer 0>, <&tog 0>;
         };
 
         auto_shift_bottom_right: auto_shift_bottom_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "AUTO_SHIFT_BOTTOM_RIGHT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -261,21 +237,18 @@
 
         layer_sel_lh: layer_sel_lh {
             compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_SEL_LH";
             #binding-cells = <0>;
             bindings = <&mo 0>, <&mo 0>, <&mo 0>, <&tog 0>;
         };
 
         left_thumb_gui: left_thumb_gui {
             compatible = "zmk,behavior-tap-dance";
-            label = "LEFT_THUMB_GUI";
             #binding-cells = <0>;
             bindings = <&mo 0>, <&kp LEFT_GUI>;
         };
 
         num_layer_dot: num_layer_dot {
             compatible = "zmk,behavior-mod-morph";
-            label = "NUM_LAYER_DOT";
             bindings = <&kp DOT>, <&kp LEFT_PARENTHESIS>;
 
             #binding-cells = <0>;
@@ -285,14 +258,12 @@
 
         media_or_config_layer: media_or_config_layer {
             compatible = "zmk,behavior-tap-dance";
-            label = "MEDIA_OR_CONFIG_LAYER";
             #binding-cells = <0>;
             bindings = <&mo 0>, <&mo 4>;
         };
 
         mac_like_backspace: mac_like_backspace {
             compatible = "zmk,behavior-mod-morph";
-            label = "MAC_LIKE_BACKSPACE";
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
@@ -301,7 +272,6 @@
 
         thumb_th: thumb_th {
             compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_TH";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -310,14 +280,12 @@
 
         numpad_switch: numpad_switch {
             compatible = "zmk,behavior-tap-dance";
-            label = "NUMPAD_SWITCH";
             #binding-cells = <0>;
             bindings = <&kp KP_NUMLOCK>, <&none>, <&stickier_layer 4>;
         };
 
         osl_or_hold_layer: osl_or_hold_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "OSL_OR_HOLD_LAYER";
             bindings = <&mo>, <&stickier_layer>;
 
             #binding-cells = <2>;
@@ -326,7 +294,6 @@
 
         tap_dance_r_shift: tap_dance_r_shift {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_R_SHIFT";
             #binding-cells = <0>;
             bindings =
                 <&kp RIGHT_SHIFT>,
@@ -336,7 +303,6 @@
 
         qu_behavior: qu_behavior {
             compatible = "zmk,behavior-hold-tap";
-            label = "QU_BEHAVIOR";
             bindings = <&kp>, <&qu_macro>;
 
             #binding-cells = <2>;
@@ -378,35 +344,30 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 0 &bt BT_CLR>;
-            label = "SHIFT_CLEAR_BT0";
         };
 
         shift_clear_bt1: shift_clear_bt1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 1 &bt BT_CLR>;
-            label = "SHIFT_CLEAR_BT1";
         };
 
         shift_clear_bt2: shift_clear_bt2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 2 &bt BT_CLR>;
-            label = "SHIFT_CLEAR_BT2";
         };
 
         shift_clear_bt3: shift_clear_bt3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 3 &bt BT_CLR>;
-            label = "SHIFT_CLEAR_BT3";
         };
 
         shift_clear_bt4: shift_clear_bt4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 4 &bt BT_CLR>;
-            label = "SHIFT_CLEAR_BT4";
         };
 
         edit_hotkey: edit_hotkey {
@@ -420,7 +381,6 @@
                 <&macro_release>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
 
-            label = "EDIT_HOTKEY";
         };
 
         mods_combo_2_keys: mods_combo_2_keys {
@@ -433,7 +393,6 @@
                 <&macro_release>,
                 <&macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
 
-            label = "MODS_COMBO_2_KEYS";
         };
 
         qu_macro: qu_macro {
@@ -441,7 +400,6 @@
             #binding-cells = <0>;
             bindings = <&macro_tap>, <&kp Q &kp U>;
 
-            label = "QU_MACRO";
             wait-ms = <33>;
             tap-ms = <33>;
         };
